@@ -4,8 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Animal;
 
-class table_of_animals extends Model
+class Image extends Model
 {
     use HasFactory;
+
+    public function animals()
+    {
+        $this->belongsTo(Animal::class);
+    }
 }
