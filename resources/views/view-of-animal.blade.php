@@ -29,13 +29,13 @@
         <br>Address: {{$animal->owner->Address}}
 @endforeach
 
-        <a href="{{route("animal.form",$animal->id)}}"><button>UPDATE</button></a>
+       <br> <a href="{{route("animal.form",$animal->id)}}"><button>UPDATE</button></a>
 
 @if($animal->id)
   <form action="{{route('animal.delete', $animal->id)}}" method="post">
     @csrf
     @method('DELETE')
-    <button type="submit">DELETE POOR ANIMAL</button>
+  <br>  <button type="submit">DELETE POOR ANIMAL</button>
   </form>
   @endif
     

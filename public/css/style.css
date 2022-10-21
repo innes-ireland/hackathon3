@@ -28,6 +28,11 @@ nav {
     min-width: 100%;
 }
 
+button {
+    border-radius: 3px;
+    ;
+}
+
 img {
     width: 250px;
     height: 250px;
