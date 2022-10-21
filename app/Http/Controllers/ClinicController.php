@@ -52,4 +52,5 @@ class ClinicController extends Controller
         // dd($animal);
         return view('view-of-owner', compact('owner'));
     }
+    
 }
