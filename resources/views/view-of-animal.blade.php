@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="/css/style.css">
     <title>Animal detail info</title>
 </head>
 <body>
+    <div class="animal_card">
 
 @include ('common/nav')
 @foreach($animals as $animal)
@@ -20,12 +22,13 @@
     <p> Patient Age: {{$animal->age}} </p><br>
     <p> Patient Weight: {{$animal->weight}} </p><br>
     <h2> Owner Details </h2>
-
+        <div class="owner_details">
     Owner Name: <a href="{{route("owner.detail",$animal->owner->id)}}">{{$animal->owner->first_name}} {{$animal->owner->surname}} </a>
     <p> Owner contact details: Email: {{$animal->owner->email}}<br>
-        Phone: {{$animal->owner->phone}}<br>
-        Address: {{$animal->owner->Address}}
+       <br> Phone: {{$animal->owner->phone}}<br>
+        <br>Address: {{$animal->owner->Address}}
 @endforeach
-    
+    </div>
+</div>
 </body>
 </html>

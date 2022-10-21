@@ -1,0 +1,48 @@
+body {
+    max-width: 80%;
+    margin: auto;
+    padding: 5%;
+    background-color: aliceblue;
+    color: #404040;
+
+}
+
+a {
+    text-decoration: none;
+
+}
+
+li {
+    list-style-type: none;
+    line-height: 1.8em;
+
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom-style: solid;
+    border-bottom-color: lightseagreen;
+    font-size: 2.5em;
+    min-width: 100%;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+
+}
+
+.animal_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%
+}
+
+.owner_details {
+    text-decoration: underline;
+}
