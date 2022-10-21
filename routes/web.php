@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [ClinicController::class, 'index'])->name('animals.list');
-// Route::get('/search/{id}', [ClinicController::class, 'search'])->name('movies.search');
+Route::view('/', 'index');
+Route::get('/animals', [ClinicController::class, 'displayAnimals'])->name('animals.list');
+Route::get('/owners', [ClinicController::class, 'displayOwners'])->name('owner.list');
+Route::get('/search', [ClinicController::class, 'searchOwner'])->name('search');
+Route::get('/search', [ClinicController::class, 'searchAnimal'])->name('search');
 
