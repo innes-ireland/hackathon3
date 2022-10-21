@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::view('/', 'index');
-Route::get('/animals', [ClinicController::class, 'displayAnimals'])->name('animals.list');
+Route::get('/animals', [ClinicController::class, 'displayAnimals'])->name('animals.list');Route::get('/owners', [ClinicController::class, 'displayOwners'])->name('owner.list');
 Route::get('/owners', [ClinicController::class, 'displayOwners'])->name('owner.list');
 
 Route::get('/search', [ClinicController::class, 'search'])->name('search');
@@ -28,3 +28,4 @@ Route::get('/owner/detail/{id}', [ClinicController::class, 'ownerDetail'])->name
 // Route::get('/search', [ClinicController::class, 'searchAnimal'])->name('search');
 // Route::get('/search', [ClinicController::class, 'searchOwner'])->name('search');
 // Route::get('/search', [ClinicController::class, 'searchAnimal'])->name('search');
+
