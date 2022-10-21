@@ -13,7 +13,7 @@
   <ul>
   @foreach ($animals as $animal)
     {{-- {{dump($animal->name)}} --}}
-      <li>{{$animal->name}}</li>
+      <li><a href="/animal/detail/{{$animal->id}}"> {{$animal->name}}</li>
   @endforeach
   </ul>
   
