@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Animal extends Model
 {
     use HasFactory;
+
+    public function owners()
+    {
+        $this->belongsTo(Owner::class);
+    }
+
+    public function images()
+    {
+        $this->belongsTo(Image::class);
+    }
 }
