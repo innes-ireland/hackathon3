@@ -1,4 +1,4 @@
-
+{{-- 
 
 
 
@@ -39,4 +39,4 @@
         Address: {{$animal->owner->Address}}
     
 </body>
-</html>
+</html> --}}

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClinicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,5 +18,5 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [Clinic::class, 'index'])->name('movies.list');
-Route::get('/search/{id}', [Clinic::class, 'search'])->name('movies.search');
+Route::get('/', [ClinicController::class, 'index'])->name('movies.list');
+// Route::get('/search/{id}', [ClinicController::class, 'search'])->name('movies.search');

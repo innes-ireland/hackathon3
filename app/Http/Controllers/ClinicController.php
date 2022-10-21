@@ -11,6 +11,6 @@ class ClinicController extends Controller
     {
         $animals = Animal::orderBy('name',) ->get();
 
-        return view('/');
+        return view('viewOfAnimal', compact('animals'));
     }
 }
