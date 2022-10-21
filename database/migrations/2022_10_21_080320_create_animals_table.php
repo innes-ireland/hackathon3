@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('animals', function (Blueprint $table) {
             $table->id('id');
-            $table->bigInteger('image_id')->unsigned()->nullable();
-            $table->bigInteger('owner_id')->unsigned()->nullable();
+            $table->unsignedBigInteger('image_id')->nullable();
+            $table->unsignedBigInteger('owner_id')->nullable();
             $table->string('name')->nullable();
             $table->string('species')->nullable();
             $table->string('breed')->nullable();

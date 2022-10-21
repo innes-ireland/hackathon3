@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [Clinic::class, 'index'])->name('movies.list');
+Route::get('/search/{id}', [Clinic::class, 'search'])->name('movies.search');
