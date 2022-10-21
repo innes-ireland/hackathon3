@@ -13,7 +13,7 @@
   
   <ul>
   @foreach ($owners as $owner)
-      <li>{{$owner->first_name}} {{$owner->surname}}</li>
+      <li><a href="/owner/detail/{{$owner->id}}"> {{$owner->first_name}} {{$owner->surname}}</li>
   @endforeach
   </ul>
   

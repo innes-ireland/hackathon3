@@ -28,7 +28,16 @@
        <br> Phone: {{$animal->owner->phone}}<br>
         <br>Address: {{$animal->owner->Address}}
 @endforeach
-    </div>
-</div>
+
+        <a href="{{route("animal.form",$animal->id)}}"><button>UPDATE</button></a>
+
+@if($animal->id)
+  <form action="{{route('animal.delete', $animal->id)}}" method="post">
+    @csrf
+    @method('DELETE')
+    <button type="submit">DELETE POOR ANIMAL</button>
+  </form>
+  @endif
+    
 </body>
 </html>

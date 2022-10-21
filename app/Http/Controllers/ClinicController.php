@@ -53,5 +53,35 @@ class ClinicController extends Controller
         // dd($owners);
         return view('view-of-owner', compact('owners'));
     }
-    
+
+    public function displayForm($id)
+    {
+        $animal = Animal::findOrFail($id);
+
+        return view('update', compact('animal'));
+    }
+
+    public function update($id, Request $request)
+    {
+        // $animals = Animal::where('id', $id)->get();
+        // return view('update', compact('animals'));
+
+        $animal = Animal::findOrFail($id);
+        $animal->name = $request->input('name');
+        $animal->species = $request->input('species');
+        $animal->breed = $request->input('breed');
+        $animal->age = $request->input('age');
+        $animal->weight = $request->input('weight');
+        $animal->save();
+
+        session()->flash('success_message', "The animal was successfuly UPDATED.");
+        return redirect()->route('animal.detail', $animal->id);
+    }
+
+    public function delete($id)
+    {
+        $animal = Animal::findOrFail($id);
+        $animal->delete();
+        return redirect()->route('homepage');
+    }
 }
