@@ -1,4 +1,4 @@
-{{-- 
+ 
 
 
 
@@ -23,20 +23,23 @@
     <title>Document</title>
 </head>
 <body>
-
+@foreach ($animals as $animal)
+<ul>
+    <li>
     <h1> Patient Details </h1> <br>
     <h2> Patient No: {{$animal->id}} </h1><br>
     <h2>  {{$animal->image->path}} </h2><br>
-    <p> Patient Name: {{$animal->name}} </p><br>
-    <p> Patient Species: {{$animal->species}} </p><br>
-    <p> Patient Breed: {{$animal->breed}}</p><br>
-    <p> Patient Age: {{$animal->age}} </p><br>
-    <p> Patient Weight: {{$animal->weight}} </p><br>
+    <p> Patient Name: {{$animals->name}} </p><br>
+    <p> Patient Species: {{$animals->species}} </p><br>
+    <p> Patient Breed: {{$animals->breed}}</p><br>
+    <p> Patient Age: {{$animals->age}} </p><br>
+    <p> Patient Weight: {{$animals->weight}} </p><br>
     <h2> Owner Details </h2>
-    <p> Owner Name: {{$animal->owner->first_name}} {{$owner->last_name}} </p>
-    <p> Owner contact details: Email: {{$animal->owner->Email}}<br>
-        Phone: {{$animal->owner->phone}}<br>
-        Address: {{$animal->owner->Address}}
-    
+    <p> Owner Name: {{$animals->owner->first_name}} {{$owner->last_name}} </p>
+    <p> Owner contact details: Email: {{$animals->owner->Email}}<br>
+        Phone: {{$animals->owner->phone}}<br>
+        Address: {{$animals->owner->Address}}
+    </li>
+    @endforeach
 </body>
-</html> --}}
+</html> 

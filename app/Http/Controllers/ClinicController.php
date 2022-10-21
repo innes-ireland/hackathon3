@@ -7,10 +7,11 @@ use Illuminate\Http\Request;
 
 class ClinicController extends Controller
 {
-    public function index()
+    public function displayAnimals()
     {
         $animals = Animal::orderBy('name',) ->get();
 
         return view('viewOfAnimal', compact('animals'));
     }
+    
 }
