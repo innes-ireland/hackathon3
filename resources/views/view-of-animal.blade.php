@@ -21,7 +21,7 @@
     <p> Patient Weight: {{$animal->weight}} </p><br>
     <h2> Owner Details </h2>
 
-    <p> Owner Name: {{$animal->owner->first_name}} {{$animal->owner->surname}} </p>
+    Owner Name: <a href="{{route("owner.detail",$animal->owner->id)}}">{{$animal->owner->first_name}} {{$animal->owner->surname}} </a>
     <p> Owner contact details: Email: {{$animal->owner->email}}<br>
         Phone: {{$animal->owner->phone}}<br>
         Address: {{$animal->owner->Address}}

@@ -48,8 +48,9 @@ class ClinicController extends Controller
 
     public function ownerDetail($id)
     {
-        $owner = Owner::where('id', $id)->get();
-        // dd($animal);
-        return view('view-of-owner', compact('owner'));
+        $owners = Owner::where('id', $id)->get();
+        // dd($owners->animals);
+        // dd($owners);
+        return view('view-of-owner', compact('owners'));
     }
 }
