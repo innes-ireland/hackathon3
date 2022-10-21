@@ -13,6 +13,6 @@ class Owner extends Model
 
     public function animals()
     {
-        $this->belongsToMany(Animal::class);
+        return $this->belongsToMany(Animal::class);
     }
 }

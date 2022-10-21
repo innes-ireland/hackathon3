@@ -11,13 +11,13 @@ class Animal extends Model
 {
     use HasFactory;
 
-    public function owners()
+    public function owner()
     {
-        $this->belongsTo(Owner::class);
+        return $this->belongsTo(Owner::class);
     }
 
-    public function images()
+    public function image()
     {
-        $this->belongsTo(Image::class);
+        return $this->belongsTo(Image::class);
     }
 }

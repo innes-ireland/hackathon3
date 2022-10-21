@@ -8,11 +8,12 @@
 </head>
 <body>
   @include ('common/nav')
+  
   @foreach ($owners as $owner)
-      {{$owner->first_name}}
+      <a href="{{route("owner.detail",$owner->id)}}">{{$owner->first_name}} {{$owner->surname}}</a>
   @endforeach
-    @foreach ($animals as $animal)
-      {{$animal->name}}
+  @foreach ($animals as $animal)
+      <a href="{{route("animal.detail",$animal->id)}}">{{$animal->name}}</a>
   @endforeach
 </body>
 </html>

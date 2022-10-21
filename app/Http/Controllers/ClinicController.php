@@ -23,19 +23,33 @@ class ClinicController extends Controller
         return view('owners', compact('owners'));
     }
 
-    public function searchOwner(Request $request)
+    public function search(Request $request)
     {
-        $search_term = $request->input('search');
-        // $animals = Animal::where('name', 'like', '%' . $search_term . '%')->orderBy('name', 'asc')->get();
-        $owners = Owner::where('first_name', 'like', '%' . $search_term . '%')->orderBy('surname', 'asc')->get();
-        return view('owners', compact('owners'));
+        $owners = [];
+        $animals = [];
+        if ($request->has('searchOwner')) {
+            $search_term_owner = $request->input('searchOwner');
+            $owners = Owner::where('first_name', 'like', '%' . $search_term_owner . '%')->orderBy('surname', 'asc')->get();
+        } else {
+            $search_term_animal = $request->input('searchAnimal');
+            $animals = Animal::where('name', 'like', '%' . $search_term_animal . '%')->orderBy('name', 'asc')->get();
+            // return view('results', compact('animals'));
+        }
+        return view('results', compact('owners', 'animals'));
     }
 
-    public function searchAnimal(Request $request)
+    public function animalDetail($id)
     {
-        $search_term = $request->input('search');
-        $animals = Animal::where('name', 'like', '%' . $search_term . '%')->orderBy('name', 'asc')->get();
+        $animals = Animal::where('id', $id)->get();
+        // dd($animal);
+        // $owners = $animals->owner;
+        return view('view-of-animal', compact('animals'));
+    }
 
-        return view('animals', compact('animals'));
+    public function ownerDetail($id)
+    {
+        $owner = Owner::where('id', $id)->get();
+        // dd($animal);
+        return view('view-of-owner', compact('owner'));
     }
 }

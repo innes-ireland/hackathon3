@@ -10,9 +10,14 @@
 @include ('common/nav')
   <form action="{{route('search')}}" method="get">
     <label for=""></label>
-    <input type="text" name="searchAnimal" placeholder="Search for animal">
     <input type="text" name="searchOwner" placeholder="Search for owner">
-    <button type="submit">SEARCH</button>
+    <button type="submit">SEARCH BY OWNER</button>
   </form>
+  <form action="{{route('search')}}" method="get">
+    <label for=""></label>
+    <input type="text" name="searchAnimal" placeholder="Search for animal">
+    <button type="submit">SEARCH BY ANIMAL</button>
+  </form>
+
 </body>
 </html>
