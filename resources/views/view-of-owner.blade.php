@@ -10,14 +10,15 @@
 <body>
 
 @include ('common/nav')
-@foreach($animals as $animal)
-
-
-    <p> Owner Name: {{$animal->owner->first_name}} {{$animal->owner->surname}} </p>
-    <p> Owner contact details: Email: {{$animal->owner->email}}<br>
-        Phone: {{$animal->owner->phone}}<br>
-        Address: {{$animal->owner->Address}}
+@foreach($owners as $owner)
+    <p> Owner Name: {{$owner->first_name}} {{$owner->surname}} </p>
+    <p> Owner contact details: Email: {{$owner->email}}<br>
+        Phone: {{$owner->phone}}<br>
+        Address: {{$owner->Address}}
+      <h3>Animals</h3>
+        @foreach($owner->animals as $animal)
+        <a href="{{route("animal.detail",$animal->id)}}">{{$animal->name}}</a>
+        @endforeach
 @endforeach
-    
 </body>
 </html>
